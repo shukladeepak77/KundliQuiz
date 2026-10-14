@@ -14,15 +14,12 @@ export type Section = {
   questions: Question[];
 };
 
+// Intentionally excludes date of birth, time of birth, and birthplace/
+// coordinates — this app is meant to be shareable as a link without
+// exposing those specific personal details, even though the astrological
+// findings derived from them (Lagna, planetary placements, etc.) are shown.
 export const birthDetails = {
   name: "Deepak Shukla",
-  dob: "1977-04-12",
-  tob: "14:03",
-  place: "Delhi, Delhi, India",
-  lat: "28.6664535°",
-  lon: "77.2169781°",
-  tz: "UTC +5.5",
-  ayanamsha: "23.53970988°",
   reportDate: "October 08, 2026",
 };
 
@@ -85,12 +82,12 @@ export const sections: Section[] = [
       },
       {
         id: "b6",
-        q: "The report explicitly notes a limitation about your birth time (14:03). What is it?",
+        q: "The report explicitly notes a limitation about your recorded birth time. What is it?",
         options: [
-          "Delhi's coordinates were only approximate",
+          "The coordinates used were only approximate",
           "The birth time has no independent verification, so time-sensitive findings carry inherent uncertainty",
-          "14:03 falls on a rare astrological boundary that needs correction",
-          "The Ayanamsha used is non-standard for this location",
+          "It falls on a rare astrological boundary that needs correction",
+          "The Ayanamsha used is non-standard",
         ],
         correct: 1,
         explain:

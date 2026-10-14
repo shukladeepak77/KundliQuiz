@@ -37,18 +37,16 @@ export default function Home({ onPick }: Props) {
             <span className="birth-value">{birthDetails.name}</span>
           </div>
           <div>
-            <span className="birth-label">Born</span>
-            <span className="birth-value">
-              {birthDetails.dob} · {birthDetails.tob}
-            </span>
-          </div>
-          <div>
-            <span className="birth-label">Place</span>
-            <span className="birth-value">{birthDetails.place}</span>
-          </div>
-          <div>
             <span className="birth-label">Lagna</span>
             <span className="birth-value">Karka (Cancer)</span>
+          </div>
+          <div>
+            <span className="birth-label">Report Date</span>
+            <span className="birth-value">{birthDetails.reportDate}</span>
+          </div>
+          <div>
+            <span className="birth-label">Source</span>
+            <span className="birth-value">Honest Diagnostic PDF</span>
           </div>
         </div>
       </div>
