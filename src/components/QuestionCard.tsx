@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import type { Question } from "../data/questions";
+import type { Question } from "../data/types";
 import { shuffledIndices } from "../lib/shuffle";
 
 type Props = {

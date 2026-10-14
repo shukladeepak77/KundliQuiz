@@ -1,35 +1,45 @@
-# My Kundli Quiz
+# Kundli Quiz
 
-A personal, question-and-multiple-choice version of Deepak's Honest Diagnostic
-Janam Kundli report (21-page PDF, generated October 08, 2026 by Dharma Path
-USA Foundation). Instead of reading the PDF straight through, this turns every
-major finding into a question with 4 options — pick one, get immediate
-feedback plus the real explanation pulled from the report.
+A question-and-multiple-choice version of a Janam Kundli (Honest Diagnostic
+PDF, from Dharma Path USA Foundation). Instead of reading the PDF straight
+through, this turns every major finding into a question with 4 options —
+pick one, get immediate feedback plus the real explanation pulled from the
+report. Built to hold **multiple people's kundlis**, searchable by name from
+the home screen.
 
 ## Content
 
-47 questions across 7 sections, in `src/data/questions.ts`:
+Each person lives in their own file under `src/data/people/`, following
+`deepak-shukla.ts` as the template — a `Person` (`slug`, `name`, `lagna`,
+`reportDate`) with `sections`, each holding several `{q, options, correct,
+explain}` questions. `src/data/people/index.ts` lists every person; add a
+new file there and add it to the `people` array to add someone new — no
+other file needs to change.
 
-1. **Birth Chart Basics** — Lagna, Moon, nakshatra, Manglik, Atmakaraka
-2. **Planets & Houses** — who's where in the D1 chart, which houses are empty
-3. **Strength & Affliction** — Shadbala ranking, Peedit planets, Ashtakavarga
-4. **Doshas & Yogas** — 11 present / 32 absent, Yogakaraka, Parivartana
-5. **Dasha & Timing** — current Mahadasha/Antardasha/Pratyantardasha, Sade Sati, Maraka analysis
-6. **Career, Marriage & Health** — Arudha Lagna, D9, D10 deep-dives
-7. **The Big Picture** — the report's own closing summary, distilled to 3 questions
+Deepak Shukla's kundli (47 questions across 7 sections — Birth Chart
+Basics, Planets & Houses, Strength & Affliction, Doshas & Yogas, Dasha &
+Timing, Career/Marriage/Health, The Big Picture) is hand-transcribed from
+`astrojyotishprivate/report/deepak/latest9/20261008-161237_honest-diagnostic-deepak-shukla.pdf`.
+All content is hand-written — nothing is fetched or generated at runtime,
+so there's no backend and no PDF parsing in the app itself.
 
-All content is hand-transcribed from the source PDF at
-`astrojyotishprivate/report/deepak/latest9/20261008-161237_honest-diagnostic-deepak-shukla.pdf`
-— nothing is fetched or generated at runtime, so there's no backend and no
-PDF parsing in the app itself. To update it for a newer report, edit
-`src/data/questions.ts` directly.
+## Navigation
+
+Home screen is a name search (`SearchHome`) — type a name, matching people
+show as cards, click through to that person's hub (`PersonHub`, the list of
+quiz sections) and then into a `SectionQuiz`. Routing is a minimal
+hand-rolled hash router (`src/lib/route.ts`, no library) so every screen has
+a real, shareable URL:
+
+- `#/` — search
+- `#/<personSlug>` — that person's section list
+- `#/<personSlug>/<sectionId>` — an active quiz
 
 ## Stack
 
-Vite + React + TypeScript, no router (single `useState` toggles between the
-home screen and an active section). Progress (best score per section) is
-saved to `localStorage` as a pure per-device convenience — nothing is sent
-anywhere.
+Vite + React + TypeScript. Progress (best score per section) is saved to
+`localStorage`, namespaced by `personSlug::sectionId`, as a pure per-device
+convenience — nothing is sent anywhere.
 
 ## Run locally
 
@@ -42,9 +52,19 @@ npm run dev
 
 Connect this repo to Netlify (or run `netlify deploy`) — `netlify.toml`
 already sets the build command (`npm run build`) and publish directory
-(`dist`), plus an SPA redirect so refreshing mid-quiz doesn't 404.
+(`dist`), plus an SPA redirect so refreshing mid-quiz doesn't 404 (not
+strictly required since routing is hash-based, but harmless to keep).
 
 The page sets `<meta name="robots" content="noindex, nofollow">` since this
 contains personal birth-chart details — it won't show up in search results,
 but the Netlify URL itself is not private/password-protected unless you add
 that separately in Netlify's site settings.
+
+## Adding a new person's kundli
+
+1. Get their Honest Diagnostic PDF and read through it.
+2. Create `src/data/people/<their-slug>.ts`, copying the shape of
+   `deepak-shukla.ts` — same `Section`/`Question` structure, new content
+   transcribed from their report.
+3. Add them to the `people` array in `src/data/people/index.ts`.
+4. They'll now show up in the home-screen search automatically.

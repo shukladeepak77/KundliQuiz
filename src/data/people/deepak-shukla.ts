@@ -1,29 +1,6 @@
-export type Question = {
-  id: string;
-  q: string;
-  options: string[];
-  correct: number;
-  explain: string;
-};
+import type { Person } from "../types";
 
-export type Section = {
-  id: string;
-  title: string;
-  icon: string;
-  blurb: string;
-  questions: Question[];
-};
-
-// Intentionally excludes date of birth, time of birth, and birthplace/
-// coordinates — this app is meant to be shareable as a link without
-// exposing those specific personal details, even though the astrological
-// findings derived from them (Lagna, planetary placements, etc.) are shown.
-export const birthDetails = {
-  name: "Deepak Shukla",
-  reportDate: "October 08, 2026",
-};
-
-export const sections: Section[] = [
+const sections = [
   {
     id: "basics",
     title: "Birth Chart Basics",
@@ -531,4 +508,10 @@ export const sections: Section[] = [
   },
 ];
 
-export const totalQuestions = sections.reduce((n, s) => n + s.questions.length, 0);
+export const deepakShukla: Person = {
+  slug: "deepak-shukla",
+  name: "Deepak Shukla",
+  lagna: "Karka (Cancer)",
+  reportDate: "October 08, 2026",
+  sections,
+};

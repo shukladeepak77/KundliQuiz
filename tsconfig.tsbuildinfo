@@ -1,1 +1,0 @@
-{"root":["./src/app.tsx","./src/main.tsx","./src/components/home.tsx","./src/components/questioncard.tsx","./src/components/sectionquiz.tsx","./src/data/questions.ts","./src/lib/progress.ts","./src/lib/shuffle.ts"],"version":"5.9.3"}

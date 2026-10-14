@@ -113,6 +113,34 @@ body {
   margin: 8px 0 18px;
 }
 
+.search-box {
+  margin: 18px 0;
+}
+
+.search-input {
+  width: 100%;
+  font: inherit;
+  font-size: 16px;
+  padding: 14px 16px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: var(--cream-card);
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.1s ease;
+}
+
+.search-input:focus {
+  border-color: var(--orange);
+}
+
+.search-empty {
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 14px;
+  padding: 24px 0;
+}
+
 .section-list {
   display: flex;
   flex-direction: column;

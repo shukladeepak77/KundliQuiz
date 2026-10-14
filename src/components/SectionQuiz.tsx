@@ -1,14 +1,15 @@
 import { useState } from "react";
-import type { Section } from "../data/questions";
+import type { Section } from "../data/types";
 import QuestionCard from "./QuestionCard";
 import { recordAttempt } from "../lib/progress";
 
 type Props = {
+  personSlug: string;
   section: Section;
   onExit: () => void;
 };
 
-export default function SectionQuiz({ section, onExit }: Props) {
+export default function SectionQuiz({ personSlug, section, onExit }: Props) {
   const [qIndex, setQIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [done, setDone] = useState(false);
@@ -24,7 +25,7 @@ export default function SectionQuiz({ section, onExit }: Props) {
     if (qIndex + 1 < total) {
       setQIndex((i) => i + 1);
     } else {
-      recordAttempt(section.id, score, total);
+      recordAttempt(personSlug, section.id, score, total);
       setDone(true);
     }
   }
