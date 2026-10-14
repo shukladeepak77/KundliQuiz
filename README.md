@@ -16,12 +16,20 @@ explain}` questions. `src/data/people/index.ts` lists every person; add a
 new file there and add it to the `people` array to add someone new — no
 other file needs to change.
 
-Deepak Shukla's kundli (47 questions across 7 sections — Birth Chart
+Deepak Shukla's kundli (89 questions across 10 sections — Birth Chart
 Basics, Planets & Houses, Strength & Affliction, Doshas & Yogas, Dasha &
-Timing, Career/Marriage/Health, The Big Picture) is hand-transcribed from
-`astrojyotishprivate/report/deepak/latest9/20261008-161237_honest-diagnostic-deepak-shukla.pdf`.
-All content is hand-written — nothing is fetched or generated at runtime,
-so there's no backend and no PDF parsing in the app itself.
+Timing, D9 Navamsa Chart, Planet-to-Planet Aspects, Bhava Lordship,
+Career/Marriage/Health, The Big Picture) is hand-transcribed from every
+page of `astrojyotishprivate/report/deepak/latest9/20261008-161237_honest-diagnostic-deepak-shukla.pdf`
+— the full 21-page report, not just a subset: every chart table (D1, D9,
+Graha Sthiti, Graha Drishti, Graha Peedit, Ashtakavarga, Bhava Lordship,
+Shadbala), every one of the 11 present yogas, the full 9-Mahadasha
+sequence plus the MD/AD relationship and Gochar-timing technique, and
+every paragraph of the written analysis (Overview, Personality & Path,
+Career, Marriage, Health, Maraka Analysis, Full Dasha Timeline, Closing
+Technical Summary) is represented by at least one question. All content
+is hand-written — nothing is fetched or generated at runtime, so there's
+no backend and no PDF parsing in the app itself.
 
 ## Navigation
 

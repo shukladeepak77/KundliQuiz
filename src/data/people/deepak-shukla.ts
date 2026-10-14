@@ -152,6 +152,19 @@ const sections = [
         explain:
           "Rahu sits in the 4th house in Tula (Libra), Chitra nakshatra. It's read as amplifying desires connected to home, inner peace, and mother — but tending to bring an unconventional or restless quality to domestic roots, which fits Rahu's nature as a shadow/desire planet.",
       },
+      {
+        id: "p9",
+        q: "Mercury and Ketu both sit in your 10th house, but how far apart are they in exact degrees — and why does the report call this \"a loose but real conjunction\"?",
+        options: [
+          "16.9° apart — close enough to count as conjunct and color each other, but not a tight, high-intensity conjunction",
+          "0.01° apart — essentially the same exact point",
+          "They're not actually conjunct, just in the same house",
+          "29° apart — barely counts at all",
+        ],
+        correct: 0,
+        explain:
+          "Mercury sits at 17.90° in Mesha and Ketu at 0.98° — a 16.9° gap. Classical texts treat conjunctions within the same sign as real even when not razor-tight, so this still counts, just as a \"loose\" rather than exact one. The report reads it as giving an intuitive, non-linear intellect: insight that arrives suddenly rather than through step-by-step reasoning.",
+      },
     ],
   },
   {
@@ -212,6 +225,77 @@ const sections = [
         correct: 2,
         explain:
           "The 1st house (self, vitality) and 12th house (losses, foreign lands) both come in at 22 points against a chart average near 28. The 1st house tying for last is flagged specifically in the Health section as a meaningful signal for general constitutional resilience.",
+      },
+      {
+        id: "s7",
+        q: "By Shadbala, how many planets land in the top \"Strong\" tier (Sun, Mars, Jupiter, Venus)?",
+        options: ["Two", "Three", "Four", "All seven"],
+        correct: 2,
+        explain:
+          "Four planets rank \"Strong\": Sun (#1, 1.76x), Mars (#2, 1.39x), Jupiter (#3, 1.27x), Venus (#4, 1.26x). Moon and Mercury rank \"Adequate\" (#5 and #6), and Saturn alone falls \"Below Requirement\" at #7.",
+      },
+      {
+        id: "s8",
+        q: "The Graha Sthiti table classifies every planet as a functional benefic (Shubh), malefic (Ashubh), or Neutral for Karka Lagna specifically — based on which houses each planet owns. Which TWO planets are functional benefics (Shubh) for you?",
+        options: ["Sun and Jupiter", "Moon and Mars", "Venus and Mercury", "Saturn and Rahu"],
+        correct: 1,
+        explain:
+          "Moon (owns your 1st house) and Mars (owns your 5th and 10th) are both Shubh — genuinely helpful by house-ownership for Karka Lagna. Mercury, Saturn, Rahu, and Ketu are Ashubh (functional malefics); Sun, Jupiter, and Venus come out Neutral.",
+      },
+      {
+        id: "s9",
+        q: "How many planets are classified as functional malefics (Ashubh) for your Lagna, by house ownership?",
+        options: ["Two", "Three", "Four — Mercury, Saturn, Rahu, and Ketu", "None"],
+        correct: 2,
+        explain:
+          "Four: Mercury (owns 3rd & 12th), Saturn (owns 7th & 8th), plus Rahu and Ketu (both classed Ashubh by default for this Lagna, owning no houses themselves). Notably Saturn is BOTH a functional malefic by ownership AND your weakest planet by Shadbala — a double strike worth remembering.",
+      },
+      {
+        id: "s10",
+        q: "Beyond its weak Shadbala, Saturn's own Bhinnashtakavarga score in its natal sign (Karka) is also strikingly low. What is it, out of a possible 8?",
+        options: ["7 of 8", "5 of 8", "2 of 8 — among the lowest individual-planet scores in the whole chart", "0 of 8"],
+        correct: 2,
+        explain:
+          "Just 2 of 8 — stacking a third weak-Saturn signal on top of its below-minimum Shadbala and its 1st-house/maraka-lord/current-Mahadasha convergence. It's tempered somewhat by Saturn sitting in its own nakshatra (Pushya), which the report notes lends some stabilizing quality despite the otherwise low numbers.",
+      },
+      {
+        id: "s11",
+        q: "The Sarvashtakavarga total across all 12 rashis should equal a fixed classical number if the chart is computed correctly — otherwise it signals a computation error. What is that number, and does this chart hit it?",
+        options: [
+          "360 — and this chart falls short",
+          "337 — and this chart matches it exactly",
+          "300 — and this chart exceeds it",
+          "The report doesn't check this",
+        ],
+        correct: 1,
+        explain:
+          "337 is the classical fixed total, and this chart's Sarvashtakavarga sums to exactly 337 across all 12 rashis — confirming the computation is sound, not just a reading of raw numbers. The report flags this explicitly as a self-check, not just a data point.",
+      },
+      {
+        id: "s12",
+        q: "True or false: Saturn is debilitated (Neech) in this chart, since it sits in Karka (Cancer) — a water sign often associated with emotional vulnerability for a planet like Saturn.",
+        options: [
+          "True — Karka is Saturn's debilitation sign",
+          "False — Saturn's actual debilitation sign is Mesha (Aries); in Karka it's simply neither exalted nor debilitated",
+          "True, but only partially (Neecha Bhanga cancels it)",
+          "Undetermined from the data",
+        ],
+        correct: 1,
+        explain:
+          "A common mix-up worth clearing up: Saturn's classical debilitation sign is Mesha (Aries), and its exaltation sign is Tula (Libra). Sitting in Karka, Saturn's Ucch/Neech status is simply \"—\" (neither) — its weakness in this chart comes entirely from Shadbala and Bhinnashtakavarga, not from debilitation.",
+      },
+      {
+        id: "s13",
+        q: "Even though the Asta Grahas table confirms NO planet technically crosses the combustion orb, the Personality section still adds a classical caveat about Venus specifically. What is it?",
+        options: [
+          "Venus sitting right next to the Sun is still \"vulnerable to combustion\" by classical proximity, which can mute its full expression even while exalted",
+          "Venus is secretly combust despite what the table says",
+          "There is no such caveat — Venus is unaffected",
+          "The caveat is about Mercury, not Venus",
+        ],
+        correct: 0,
+        explain:
+          "A genuinely subtle point worth sitting with: passing the technical combustion-orb check and being entirely free of classical proximity concerns aren't quite the same thing. Venus sits very close to the Sun in your 9th house, and even though it stays outside the formal combustion orb (confirmed CLEAR, no Peedit marker), classical texts still note that such closeness can soften a planet's full expression — here, potentially tempering how fully Venus's exaltation benefits come through, even though nothing in the data says this has definitely happened.",
       },
     ],
   },
@@ -293,6 +377,71 @@ const sections = [
         correct: 2,
         explain:
           "Three benefics qualify: Jupiter, Mercury, and Venus. Classically this indicates growing, self-sustaining wealth that increases with age — wealth built gradually rather than arriving suddenly.",
+      },
+      {
+        id: "y9",
+        q: "Parvata Yoga (a Raja Yoga, present in your chart) forms as an alternate trigger when the Lagna lord and the 12th lord are both placed where?",
+        options: [
+          "Both in Kendras (angular houses) — Moon in the 7th, Mercury in the 10th",
+          "Both debilitated",
+          "Both in the 8th house together",
+          "Both retrograde",
+        ],
+        correct: 0,
+        explain:
+          "Lagna lord Moon (7th house) and 12th lord Mercury (10th house) are both in Kendras — the classical alternate trigger for Parvata Yoga, adding to your chart's cluster of status-supporting combinations.",
+      },
+      {
+        id: "y10",
+        q: "Sunapha Yoga (present, a Lunar Yoga) forms when a natural malefic occupies the 2nd sign from the Moon. Which planet creates it for you, and what does it classically indicate?",
+        options: [
+          "Saturn — delays and restriction",
+          "Mars, in Kumbha (2nd from Moon's Makara) — self-earned wealth and a capable, intelligent mind, with more friction along the way",
+          "Rahu — sudden, unstable gains",
+          "Ketu — detachment from wealth entirely",
+        ],
+        correct: 1,
+        explain:
+          "Mars sits in the 2nd sign from your Moon, forming Sunapha Yoga — classically read as self-made drive and a sharp, capable mind, achieved with somewhat more friction than a benefic-formed version of the same yoga would carry.",
+      },
+      {
+        id: "y11",
+        q: "Obhayachari Yoga (present, a Solar Yoga) forms when the Sun is flanked on both sides by planets in the signs immediately before and after it. Which two planets flank your Sun?",
+        options: [
+          "Mars (12th from Sun) and Mercury (2nd from Sun)",
+          "Moon and Saturn",
+          "Jupiter and Venus",
+          "Rahu and Ketu",
+        ],
+        correct: 0,
+        explain:
+          "Mars sits in the 12th sign from your Sun, and Mercury in the 2nd — flanking it on both sides. Classically this indicates a balanced, well-supported, resourceful nature.",
+      },
+      {
+        id: "y12",
+        q: "Shankha Yoga (present, a Raja Yoga) requires the 5th and 6th lords to sit in mutual Kendras alongside a powerful Moon. Which two house-lords form it in your chart?",
+        options: [
+          "5th lord Mars and 6th lord Jupiter",
+          "5th lord Venus and 6th lord Saturn",
+          "5th lord Sun and 6th lord Mercury",
+          "5th lord Moon and 6th lord Rahu",
+        ],
+        correct: 0,
+        explain:
+          "Your 5th lord Mars and 6th lord Jupiter sit in mutual Kendras, alongside a strong Moon — classically indicating a long, prosperous life, sound judgement, and a charitable nature.",
+      },
+      {
+        id: "y13",
+        q: "Parijata Yoga (present, a Raja Yoga) is a more technical check: the lord of the sign held by the Lagna lord's own dispositor must itself be well placed (Kendra, Trikona, own, or exaltation sign). What does its presence classically indicate?",
+        options: [
+          "A fortunate, well-supported life despite a modest or humble start",
+          "Certain poverty throughout life",
+          "No children",
+          "A short lifespan",
+        ],
+        correct: 0,
+        explain:
+          "Parijata Yoga is a quieter, more technical addition to your yogic foundation — it rounds out the chart's overall tilt toward eventual stability and support, even if early circumstances were modest.",
       },
     ],
   },
@@ -379,6 +528,289 @@ const sections = [
         explain:
           "Venus Antardasha, roughly ages 51.6 to 54.7. Venus rules your 4th and 11th houses and is exalted — a notable contrast to the Sun Antardasha right after it, which activates your 2nd-house (maraka) lord.",
       },
+      {
+        id: "d10",
+        q: "Your full Vimshottari Mahadasha sequence runs 9 planets across 120 years. Which planet's Mahadasha was running at the moment you were born?",
+        options: ["Ketu", "Rahu", "Moon (1977–1981)", "Jupiter"],
+        correct: 2,
+        explain:
+          "Moon Mahadasha (1977-04-12 to 1981-01-20) — only 3.77 years, the leftover balance from your Moon's nakshatra at birth (Shravana). The full sequence from there: Mars → Rahu → Jupiter → Saturn (current) → Mercury → Ketu → Venus → Sun, each a fixed classical duration regardless of chart.",
+      },
+      {
+        id: "d11",
+        q: "Which Mahadasha in your sequence is the SHORTEST of all nine (just 6 years)?",
+        options: ["Ketu", "Mars", "Sun", "Moon"],
+        correct: 2,
+        explain:
+          "Sun Mahadasha is only 6 years — the shortest of the nine, and also the very last one in your documented 120-year cycle (2085 to 2091). Ketu and Mars are both 7 years each, the next-shortest.",
+      },
+      {
+        id: "d12",
+        q: "The report runs a \"Step 3 — MD/AD Inter-Relationship\" check: how do your Mahadasha lord (Saturn, House 1) and Antardasha lord (Mercury, House 10) relate to each other structurally?",
+        options: [
+          "They're enemies with no relationship",
+          "They form a Kendra (angular) axis 10 houses apart — mutually visible and influential, classified Neutral, with mixed results depending on each planet's own strength",
+          "They're in the same house",
+          "Mercury blocks all of Saturn's results",
+        ],
+        correct: 1,
+        explain:
+          "Saturn (House 1) and Mercury (House 10) sit on a 4th/10th kendra axis — angular to each other, so each is visible and influential on the other. The report classifies this relationship as Neutral: it doesn't predict smooth or rocky results on its own, it just means the two periods are structurally linked.",
+      },
+      {
+        id: "d13",
+        q: "\"Step 5\" of the dasha analysis lists every house \"currently activated\" by your full running dasha stack (Mahadasha + Antardasha + Pratyantardasha combined). How many distinct houses does that add up to?",
+        options: ["Three", "Five", "Seven — houses 1, 3, 4, 7, 8, 10, and 12", "All twelve"],
+        correct: 2,
+        explain:
+          "Seven houses are activated at once right now: 1st & 7th & 8th (via Saturn's Mahadasha — it sits in the 1st and rules the 7th and 8th), 3rd & 12th (via Mercury's Antardasha — sits in 10th, rules 3rd and 12th... the 10th itself plus those two), and the 4th (via Rahu's Pratyantardasha). That's an unusually wide, simultaneous spread.",
+      },
+      {
+        id: "d14",
+        q: "\"Step 6 — Layering Transits (Gochar)\" gives the report's rule for pinpointing exact timing. In one sentence: dashas show what CAN happen; what do transits show?",
+        options: [
+          "Transits show WHEN — specifically, when transiting Jupiter AND transiting Saturn both simultaneously aspect or transit the same house already activated by your dasha stack, that's the strongest signal a real event is about to manifest",
+          "Transits are irrelevant once a dasha is running",
+          "Transits only matter for health, not other life areas",
+          "Transits replace the dasha system entirely",
+        ],
+        correct: 0,
+        explain:
+          "This is the report's explicit \"final clock\" for timing: the dasha stack sets the stage (which houses/themes are active for potentially years at a time), but the double-transit rule — Jupiter AND Saturn both hitting the same already-activated house at once — is what narrows a years-long window down to a specific period.",
+      },
+      {
+        id: "d15",
+        q: "Once your eventual Mercury Mahadasha begins (after Saturn concludes around age 63.8), which Antardasha runs first within it?",
+        options: ["Mercury's own Antardasha (age 63.8–66.2)", "Ketu's", "Venus's", "Saturn's"],
+        correct: 0,
+        explain:
+          "Every Mahadasha opens with that same planet's own Antardasha first — so Mercury/Mercury runs age 63.8 to 66.2, followed by Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, and finally Saturn to close out the Mahadasha. Within that sequence, Venus's Antardasha (age 67.2–70.0) again stands out as likely favorable, same reasoning as its Saturn-Mahadasha appearance — it's exalted and strong.",
+      },
+      {
+        id: "d16",
+        q: "Looking ahead within the CURRENT Saturn Mahadasha, which future Antardasha does the Maraka analysis specifically flag as worth separate attention — because it directly activates your 2nd-house (maraka) lord?",
+        options: [
+          "Sun Antardasha (age 54.7–55.7)",
+          "Jupiter Antardasha",
+          "Rahu Antardasha",
+          "Mars Antardasha",
+        ],
+        correct: 0,
+        explain:
+          "Sun rules your 2nd house (a maraka house) and is otherwise your strongest planet — so when its Antardasha runs (age 54.7 to 55.7) within the already-weak-Saturn Mahadasha, the report calls this out for separate technical attention, immediately following the Venus Antardasha right before it.",
+      },
+    ],
+  },
+  {
+    id: "navamsa",
+    title: "D9 Navamsa Chart",
+    icon: "💎",
+    blurb: "Your inner chart — marriage themes, dharmic depth, and hidden planetary strength.",
+    questions: [
+      {
+        id: "n1",
+        q: "What sign does your D9 (Navamsa) Lagna fall in — different from your D1 Lagna (Karka)?",
+        options: ["Meena (Pisces)", "Mithuna (Gemini)", "Vrishchika (Scorpio)", "Tula (Libra)"],
+        correct: 0,
+        explain:
+          "Your D9 Lagna is Meena (Pisces), in Uttara Bhadrapada nakshatra pada 3 — the Navamsa chart always has its own, independently-calculated Lagna, which reveals inner strength and marriage themes beneath the surface-level D1.",
+      },
+      {
+        id: "n2",
+        q: "Two planets share your D9 Lagna's sign (Meena) in the 1st house of the Navamsa — the same planets conjunct in your D1 9th house too. Which two?",
+        options: ["Mars and Saturn", "Sun and Jupiter", "Mercury and Ketu", "Moon and Rahu"],
+        correct: 1,
+        explain:
+          "Sun and Jupiter both land in Meena in the D9 1st house — echoing their closeness in the D1 9th house (where Sun sits with exalted Venus, and Jupiter rules that house). This repetition across both charts strengthens the dharma/higher-learning/father theme running through your chart.",
+      },
+      {
+        id: "n3",
+        q: "Where does your D9 Moon fall?",
+        options: ["Mithuna (Gemini), 4th house, Ardra nakshatra", "Makara, 1st house", "Simha, 7th house", "Kumbha, 9th house"],
+        correct: 0,
+        explain:
+          "D9 Moon sits in Mithuna (Gemini), 4th house, Ardra nakshatra pada 3 — quite different from its D1 placement in Makara. Comparing a planet's D1 and D9 sign is exactly how Vargottama status gets checked (same sign in both = Vargottama, extra strength); Moon isn't Vargottama here.",
+      },
+      {
+        id: "n4",
+        q: "Your D9 Saturn moves to a very different sign than its D1 placement (Karka). Where does it land in the Navamsa?",
+        options: ["Vrishchika (Scorpio), 9th house, Jyeshtha nakshatra", "Mesha, debilitated", "Tula, exalted", "Still in Karka"],
+        correct: 0,
+        explain:
+          "D9 Saturn sits in Vrishchika (Scorpio), 9th house, Jyeshtha nakshatra pada 4 — a sign change from its D1 Karka placement, as expected (D9 recalculates every planet's position independently from its exact D1 degree).",
+      },
+      {
+        id: "n5",
+        q: "Which planet is still RETROGRADE in the D9 chart, just as it was in D1 — and sits in the 10th house there, in Dhanu (Purva Ashadha nakshatra)?",
+        options: ["Venus", "Mars", "Mercury", "Jupiter"],
+        correct: 0,
+        explain:
+          "Venus — retrograde in both D1 and D9, a planet's retrograde status being a birth-time fact that carries through every divisional chart. In D9 it sits in Dhanu, 10th house, Purva Ashadha pada 3.",
+      },
+      {
+        id: "n6",
+        q: "D9 Mercury sits in Kanya (Virgo) — ITS OWN sign — in which house of the Navamsa, matching the 7th-house-from-Lagna marriage theme discussed earlier in this quiz?",
+        options: ["7th house, Hasta nakshatra", "1st house", "10th house", "4th house"],
+        correct: 0,
+        explain:
+          "D9 Mercury sits in its own sign (Kanya) in the 7th house — Hasta nakshatra pada 1. Mercury ruling and occupying its own D9 7th house is the exact technical fact behind the earlier marriage-chart question about intelligence, communication, and practicality in partnership themes.",
+      },
+      {
+        id: "n7",
+        q: "D9 Rahu sits in Tula (Libra), 8th house, Swati nakshatra. Which planet occupies the opposite point, Ketu, in the D9 chart?",
+        options: ["Mesha (Aries), 2nd house, Ashwini nakshatra", "Same sign as Rahu", "Meena, 1st house", "Kumbha, 12th house"],
+        correct: 0,
+        explain:
+          "D9 Ketu sits in Mesha (Aries), 2nd house, Ashwini nakshatra pada 3 — Rahu and Ketu always sit exactly 6 signs (180°) apart from each other, in every divisional chart including D9, since they're mathematically opposite points by definition.",
+      },
+    ],
+  },
+  {
+    id: "aspects",
+    title: "Planet-to-Planet Aspects",
+    icon: "↔️",
+    blurb: "Graha Drishti — who's casting a benefic or malefic gaze onto whom.",
+    questions: [
+      {
+        id: "g1",
+        q: "How many total aspecting pairs does your chart's Graha Drishti (planet-to-planet aspect) table list?",
+        options: ["Five", "Eight", "Eleven", "Twenty"],
+        correct: 2,
+        explain:
+          "11 distinct aspecting pairs are listed — every planet casts its classical 7th-house aspect onto whatever sits there, and Mars/Jupiter/Rahu/Ketu/Saturn additionally cast their special extra aspects (Mars: 4th & 8th; Jupiter/Rahu/Ketu: 5th & 9th; Saturn: 3rd & 10th).",
+      },
+      {
+        id: "g2",
+        q: "Which planet receives MALEFIC aspects from BOTH Saturn and Rahu simultaneously — part of why it carries a MINOR affliction marker?",
+        options: ["Mercury", "Venus", "Jupiter", "Sun"],
+        correct: 0,
+        explain:
+          "Mercury takes a malefic 10th-house aspect from Saturn AND a malefic 7th-house aspect from Rahu at once — exactly the two markers behind its MINOR Peedit classification covered earlier in this quiz.",
+      },
+      {
+        id: "g3",
+        q: "Is Jupiter's 9th-house aspect onto your Moon classified as benefic or malefic?",
+        options: ["Benefic", "Malefic", "Neutral — aspects don't carry a nature", "Not listed in the chart"],
+        correct: 0,
+        explain:
+          "Benefic — Jupiter is a natural benefic, so every aspect it casts (including this 9th-house one onto Moon) carries a positive classical nature, regardless of which house or planet receives it. This is the one bright note landing directly on an otherwise-afflicted Moon.",
+      },
+      {
+        id: "g4",
+        q: "Saturn casts malefic aspects onto how many different planets in your chart (and which ones)?",
+        options: [
+          "Three — Moon (7th aspect), Mercury (10th aspect), and Ketu (10th aspect)",
+          "Just one — Moon",
+          "Five — nearly every planet",
+          "None — Saturn's aspects are all benefic here",
+        ],
+        correct: 0,
+        explain:
+          "Saturn is the most \"active\" malefic aspector in your chart, reaching three separate planets at once: Moon via its 7th-house aspect, and both Mercury and Ketu via its special 10th-house aspect (a Saturn-specific extra aspect, alongside its 3rd).",
+      },
+      {
+        id: "g5",
+        q: "Mars casts its special 4th-house aspect onto which planet, classified malefic?",
+        options: ["Jupiter", "Venus", "Saturn", "Sun"],
+        correct: 0,
+        explain:
+          "Mars's special 4th-house aspect (one of its two extra aspects beyond the universal 7th, the other being the 8th) lands on Jupiter, and is classified malefic since Mars is a natural malefic.",
+      },
+      {
+        id: "g6",
+        q: "Rahu and Ketu cast malefic aspects on each other in BOTH directions (Rahu's 7th aspect reaches Ketu, and Ketu's 7th aspect reaches Rahu right back). What does this mutual-aspect pattern technically represent, given Rahu and Ketu sit exactly opposite each other?",
+        options: [
+          "It's just the universal 7th-house aspect every planet casts on whatever's directly opposite it — not a special extra aspect for either",
+          "A unique yoga found nowhere else in the chart",
+          "Proof that Rahu and Ketu are debilitated",
+          "A sign that Kal Sarp Yoga is present",
+        ],
+        correct: 0,
+        explain:
+          "Since Rahu and Ketu are always exactly 180° apart, they always sit in each other's 7th house from one another — so this \"mutual malefic aspect\" is really just the ordinary universal 7th-house aspect every planet casts, not a special technique unique to these two. A useful reminder not to over-read a structurally inevitable pattern as something exotic.",
+      },
+    ],
+  },
+  {
+    id: "bhava-lordship",
+    title: "Bhava Lordship",
+    icon: "👑",
+    blurb: "Every house's ruling planet, where that ruler sits, and how it gets along with your Lagna lord.",
+    questions: [
+      {
+        id: "v1",
+        q: "Since Moon is both your Lagna lord AND sits in your 7th house, what is Moon's \"Vs. Lagna Lord\" friendship classification in the Bhava Lordship table — a special case different from every other house?",
+        options: ["\"Self (Lagna Lord)\" — it's compared against itself", "Best Friend", "Enemy", "Bitter Enemy"],
+        correct: 0,
+        explain:
+          "The 1st house's own entry reads \"Self (Lagna Lord)\" rather than a friendship grade, since Moon IS the Lagna lord being used as the reference point for every other house's comparison — it can't be its own friend or enemy.",
+      },
+      {
+        id: "v2",
+        q: "Which single planet rules BOTH your 6th and 9th houses at once (an unusual house-lord pairing, since 6th is a Dusthana and 9th is a Trikona)?",
+        options: ["Jupiter", "Saturn", "Venus", "Mars"],
+        correct: 0,
+        explain:
+          "Jupiter rules both your 6th (Dusthana — daily work, obstacles) and 9th (Trikona — dharma, fortune) houses, sitting in your 11th house (Vrishabha, Krittika nakshatra). A mixed-house-type lordship like this is why Jupiter's own placement and strength matter so much for how BOTH of these life areas unfold.",
+      },
+      {
+        id: "v3",
+        q: "How many of your 12 house-lords are classified \"Enemy\" to your Lagna lord Moon, by Panchadha Maitri (five-fold combined friendship)?",
+        options: [
+          "Four — the 6th, 7th, 8th, and 9th house lords (Jupiter×2 and Saturn×2)",
+          "None",
+          "All twelve",
+          "Two"
+        ],
+        correct: 0,
+        explain:
+          "Four houses carry an \"Enemy\" grade against Moon: the 6th and 9th (both ruled by Jupiter) and the 7th and 8th (both ruled by Saturn). Houses whose lord is a Best Friend or Friend to the Lagna lord tend to support the self more readily; these four lean the other way structurally.",
+      },
+      {
+        id: "v4",
+        q: "Which house is classified as BOTH a Kendra (angular) AND Upachaya (growth house) simultaneously — the only house in your chart with that double nature?",
+        options: ["10th house", "1st house", "4th house", "11th house"],
+        correct: 0,
+        explain:
+          "The 10th house (career, public standing) carries the dual Kendra/Upachaya nature — meaning it's both structurally foundational (Kendra) AND the type of house that improves with age and effort (Upachaya). Its lord is Mars, sitting in your 8th house.",
+      },
+      {
+        id: "v5",
+        q: "Three houses in your chart share \"Best Friend\" status with your Lagna lord Moon — the most favorable Panchadha Maitri grade. Which houses are they?",
+        options: [
+          "2nd, 3rd, and 12th (ruled by Sun, Mercury, and Mercury again)",
+          "1st, 5th, and 9th",
+          "4th, 8th, and 11th",
+          "6th, 7th, and 10th",
+        ],
+        correct: 0,
+        explain:
+          "The 2nd house (ruled by Sun) and both the 3rd and 12th houses (both ruled by Mercury) carry \"Best Friend\" status — the most favorable grade on the table, meaning these houses' affairs tend to be most readily supported by your core identity.",
+      },
+      {
+        id: "v6",
+        q: "Which TWO houses does Venus rule together in your chart?",
+        options: ["4th and 11th", "2nd and 7th", "3rd and 9th", "1st and 6th"],
+        correct: 0,
+        explain:
+          "Venus rules your 4th (Kendra — home, mother, inner peace) and 11th (Upachaya — gains, networks, hopes) houses, sitting in your 9th house in Meena (Revati nakshatra) — the same exalted, retrograde Venus that conjuncts the Sun and anchors your Atmakaraka reading.",
+      },
+      {
+        id: "v7",
+        q: "Mercury sits in your 10th house — but which TWO different houses does it actually RULE (own as lord)?",
+        options: ["3rd and 12th", "2nd and 5th", "6th and 8th", "1st and 7th"],
+        correct: 0,
+        explain:
+          "Mercury rules your 3rd (Upachaya — courage, communication) and 12th (Dusthana — expenses, foreign lands, spiritual liberation) houses — while itself SITTING in the 10th house. It's easy to confuse \"which house a planet rules\" with \"which house it sits in\"; Mercury's ownership is 3rd/12th, its placement is the 10th.",
+      },
+      {
+        id: "v8",
+        q: "Which house's own classical nature is \"Dusthana\" (a difficult house) yet its lord Saturn happens to be sitting in a Kendra (the 1st house) — potentially softening its results somewhat?",
+        options: ["8th house", "9th house", "11th house", "4th house"],
+        correct: 0,
+        explain:
+          "The 8th house (Dusthana by nature — transformation, longevity, hidden matters) is ruled by Saturn, which sits back in the Kendra 1st house. A Dusthana lord placed in a Kendra is a mildly stabilizing technical detail, though it doesn't erase Saturn's own weak Shadbala or the 8th house's inherently challenging nature.",
+      },
     ],
   },
   {
@@ -456,6 +888,14 @@ const sections = [
         correct: 1,
         explain:
           "Mars (your Amatyakaraka) sits here with adequate — not exceptional — Ashtakavarga support (29 points), and receives a malefic aspect from Rahu, which classically can add an unpredictable or inflammatory quality to whatever Mars governs from this house.",
+      },
+      {
+        id: "l8",
+        q: "In the D10 chart, which planet sits in its OWN sign (Simha/Leo) in the 9th house, supporting an authoritative, visible professional role — consistent with that same planet's #1 Shadbala ranking natally?",
+        options: ["Sun, in Purva Phalguni nakshatra", "Saturn", "Rahu", "Mercury"],
+        correct: 0,
+        explain:
+          "D10 Sun sits strong and well-placed in its own sign (Simha) in the 9th house, in Purva Phalguni nakshatra. The report connects this directly back to natal Sun's #1-of-7 Shadbala ranking — the same planet that's strongest in your birth chart also lands in a dignified position in your dedicated career chart.",
       },
     ],
   },
