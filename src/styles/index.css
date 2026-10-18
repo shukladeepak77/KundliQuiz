@@ -113,6 +113,28 @@ body {
   margin: 8px 0 18px;
 }
 
+.skip-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--cream-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  margin: 0 0 16px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.skip-toggle input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--orange);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
 .search-box {
   margin: 18px 0;
 }

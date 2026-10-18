@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import type { Person } from "../data/types";
-import { getPersonProgress } from "../lib/progress";
+import {
+  getPersonProgress,
+  getAnsweredQuestionIds,
+  getSkipAnswered,
+  setSkipAnswered,
+} from "../lib/progress";
 import type { SectionProgress } from "../lib/progress";
 
 type Props = {
@@ -11,12 +16,26 @@ type Props = {
 
 export default function PersonHub({ person, onPick, onBack }: Props) {
   const [progress, setProgress] = useState<Record<string, SectionProgress>>({});
+  const [answeredIds, setAnsweredIds] = useState<Set<string>>(new Set());
+  const [skip, setSkip] = useState(false);
 
   useEffect(() => {
     setProgress(getPersonProgress(person.slug));
+    setAnsweredIds(getAnsweredQuestionIds(person.slug));
+    setSkip(getSkipAnswered());
   }, [person.slug]);
 
+  function toggleSkip() {
+    const next = !skip;
+    setSkip(next);
+    setSkipAnswered(next);
+  }
+
   const totalQuestions = person.sections.reduce((n, s) => n + s.questions.length, 0);
+  const totalAnswered = person.sections.reduce(
+    (n, s) => n + s.questions.filter((q) => answeredIds.has(q.id)).length,
+    0
+  );
   const totalDone = person.sections.reduce(
     (n, s) => n + (progress[s.id]?.completed ? 1 : 0),
     0
@@ -60,12 +79,21 @@ export default function PersonHub({ person, onPick, onBack }: Props) {
       </div>
 
       <div className="overall-progress">
-        {totalDone} of {person.sections.length} sections completed · {totalQuestions} questions total
+        {totalDone} of {person.sections.length} sections completed ·{" "}
+        {totalAnswered} of {totalQuestions} questions answered
       </div>
+
+      <label className="skip-toggle">
+        <input type="checkbox" checked={skip} onChange={toggleSkip} />
+        <span>
+          Skip questions I've already answered
+        </span>
+      </label>
 
       <div className="section-list">
         {person.sections.map((s) => {
           const p = progress[s.id];
+          const answeredInSection = s.questions.filter((q) => answeredIds.has(q.id)).length;
           return (
             <button key={s.id} className="section-card" onClick={() => onPick(s.id)}>
               <div className="section-card-icon">{s.icon}</div>
@@ -73,7 +101,9 @@ export default function PersonHub({ person, onPick, onBack }: Props) {
                 <div className="section-card-title">{s.title}</div>
                 <div className="section-card-blurb">{s.blurb}</div>
                 <div className="section-card-meta">
-                  {s.questions.length} questions
+                  {answeredInSection > 0
+                    ? `${answeredInSection}/${s.questions.length} answered`
+                    : `${s.questions.length} questions`}
                   {p ? ` · best ${p.bestScore}/${s.questions.length}` : ""}
                   {p?.completed ? " · ✓ done" : ""}
                 </div>

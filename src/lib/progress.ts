@@ -10,8 +10,14 @@ export type SectionProgress = {
 };
 
 type ProgressMap = Record<string, SectionProgress>;
+// Which individual question ids have been answered at least once, per person.
+// Question ids (e.g. "b1", "p3") are already unique within a person across
+// all their sections, so a flat array per person is enough.
+type AnsweredMap = Record<string, string[]>;
 
 const KEY = "kundli-quiz-progress-v2";
+const ANSWERED_KEY = "kundli-quiz-answered-v1";
+const SKIP_ANSWERED_KEY = "kundli-quiz-skip-answered-v1";
 
 function keyFor(personSlug: string, sectionId: string): string {
   return `${personSlug}::${sectionId}`;
@@ -66,4 +72,60 @@ export function recordAttempt(personSlug: string, sectionId: string, score: numb
 
 export function resetAllProgress() {
   safeWrite({});
+  try {
+    window.localStorage.removeItem(ANSWERED_KEY);
+  } catch {
+    // ignore
+  }
+}
+
+// --- Per-question "already answered" tracking (for the skip-answered toggle) ---
+
+function safeReadAnswered(): AnsweredMap {
+  try {
+    const raw = window.localStorage.getItem(ANSWERED_KEY);
+    return raw ? (JSON.parse(raw) as AnsweredMap) : {};
+  } catch {
+    return {};
+  }
+}
+
+function safeWriteAnswered(data: AnsweredMap) {
+  try {
+    window.localStorage.setItem(ANSWERED_KEY, JSON.stringify(data));
+  } catch {
+    // ignore
+  }
+}
+
+export function getAnsweredQuestionIds(personSlug: string): Set<string> {
+  const data = safeReadAnswered();
+  return new Set(data[personSlug] ?? []);
+}
+
+export function markQuestionAnswered(personSlug: string, questionId: string) {
+  const data = safeReadAnswered();
+  const existing = data[personSlug] ?? [];
+  if (!existing.includes(questionId)) {
+    data[personSlug] = [...existing, questionId];
+    safeWriteAnswered(data);
+  }
+}
+
+// --- Global "skip questions I've already answered" preference ---
+
+export function getSkipAnswered(): boolean {
+  try {
+    return window.localStorage.getItem(SKIP_ANSWERED_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
+export function setSkipAnswered(value: boolean) {
+  try {
+    window.localStorage.setItem(SKIP_ANSWERED_KEY, value ? "1" : "0");
+  } catch {
+    // ignore
+  }
 }
