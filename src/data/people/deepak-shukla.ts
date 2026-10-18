@@ -57,19 +57,6 @@ const sections = [
         explain:
           "Sun is your Atmakaraka — fittingly, it's ALSO your chart's single strongest planet by Shadbala (#1 of 7). It sits in the 9th house in Meena (Pisces), conjunct an exalted, retrograde Venus, both sharing the same nakshatra (Revati). Classically this channels your soul's core motivation through higher learning, belief, teaching, or a long-distance/foreign connection.",
       },
-      {
-        id: "b6",
-        q: "The report explicitly notes a limitation about your recorded birth time. What is it?",
-        options: [
-          "The coordinates used were only approximate",
-          "The birth time has no independent verification, so time-sensitive findings carry inherent uncertainty",
-          "It falls on a rare astrological boundary that needs correction",
-          "The Ayanamsha used is non-standard",
-        ],
-        correct: 1,
-        explain:
-          "This appears verbatim in the report's \"Overview\" section — it's a built-in honesty check on every chart, not a flaw unique to yours. Worth remembering whenever reading a finding tied closely to exact degrees, like house cusps or dasha boundaries.",
-      },
     ],
   },
   {
